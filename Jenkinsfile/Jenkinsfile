@@ -27,8 +27,7 @@ pipeline {
 
    stage ("build"){
     steps{
-        build()
-    }
+        build job: 'building app', wait: true    }
    }
 
         stage('deploy') {
