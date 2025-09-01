@@ -26,9 +26,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh '''
-                    echo "building"
-                '''
+                deploy()
             }
         }
 
@@ -75,3 +73,6 @@ pipeline {
     }
 }
 
+void deploy (){
+    sh '''  echo "building application " '''
+}
