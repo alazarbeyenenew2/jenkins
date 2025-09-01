@@ -27,6 +27,26 @@ pipeline {
                 '''
             }
         }
+
+        stage ('Deploy'){
+             input{
+                message "deploy"
+                ok "do it "
+                parameters{
+                    string(name:"TARGET_ENV",defaultValue:"PROD",description:"target environment")
+                }
+             }
+
+             steps{
+                 sh ''' echo "deploying  to ${TARGET_ENV} release version ${RELEASE}  '''
+             }
+        }
+    }
+
+    post{
+        always {
+            echo "print this value if job is success or failed"
+        }
     }
 }
 
