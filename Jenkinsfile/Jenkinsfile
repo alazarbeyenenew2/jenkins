@@ -2,14 +2,18 @@ pipeline {
     agent any 
 
     environment {
-        TEST_ENV = "test env"
+        RELEASE = "2.0"
     }
 
     stages {
-        stage('Clone') {
+        agent any 
+        environment{
+            LOG_LEVEL = "INFO"
+        }
+        stage('clone') {
             steps {
                 sh '''
-                    echo "cloning repo"
+                    echo "clone release version ${RELEASE}  and log level ${LOG_LEVEL}"
                 '''
             }
         }
