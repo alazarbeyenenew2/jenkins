@@ -29,9 +29,7 @@ pipeline {
         }
         stage("test"){
           dir("./test"){
-            steps{
                 sh ''' cat test.txt  '''
-            }
           }
                
         }
