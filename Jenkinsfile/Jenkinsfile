@@ -15,7 +15,7 @@ pipeline {
         
             steps {
                 sh '''
-                    echo "clone release version ${RELEASE}  and log level ${LOG_LEVEL}"
+                    echo "clone release version ${BUILD_ID}  and log level ${LOG_LEVEL}"
                 '''
             }
         }
