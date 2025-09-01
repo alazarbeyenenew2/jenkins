@@ -1,6 +1,10 @@
 pipeline {
     agent any 
 
+  parameters{
+      booleanParam(name:"RELEASE",defaultValue:false, description:"replease to production")
+  }
+
     environment {
         RELEASE = "2.0"
     }
@@ -34,6 +38,15 @@ pipeline {
                 sh ''' cat test.txt  '''
           }  
           }  
+        }
+
+        stage("release to production"){
+            when{
+                expression {return params.RELEASE}
+            }
+            steps{
+                echo "releasing to production"
+            }
         }
 
         stage ('Deploy'){
