@@ -27,7 +27,14 @@ pipeline {
                 '''
             }
         }
-
+        stage("test"){
+          dir("./test"){
+            steps{
+                sh ''' cat test.txt  '''
+            }
+          }
+               
+        }
         stage ('Deploy'){
              input{
                 message "deploy"
@@ -44,6 +51,7 @@ pipeline {
                    '''
              }
         }
+     
     }
 
     post{
