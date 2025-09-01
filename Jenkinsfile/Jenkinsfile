@@ -25,7 +25,13 @@ pipeline {
             }
         }
 
-        stage('Build') {
+   stage ("build"){
+    steps{
+        build()
+    }
+   }
+
+        stage('deploy') {
             steps {
                 deploy()
             }
