@@ -6,11 +6,13 @@ pipeline {
     }
 
     stages {
+    
+        stage('clone') {
         agent any 
         environment{
             LOG_LEVEL = "INFO"
         }
-        stage('clone') {
+        
             steps {
                 sh '''
                     echo "clone release version ${RELEASE}  and log level ${LOG_LEVEL}"
