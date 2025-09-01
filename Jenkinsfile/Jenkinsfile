@@ -1,3 +1,4 @@
+library identifier: 'jenkins@main',retriever: modernSCM([$class: 'gitSCMSource',remote:'https://github.com/alazarbeyenenew2/jenkins.git'])
 pipeline {
     agent any 
 
