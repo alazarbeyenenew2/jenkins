@@ -57,7 +57,7 @@ pipeline {
 
     post{
         always {
-            echo "print this value if job is success or failed"
+            cleanWs()
         }
     }
 }
