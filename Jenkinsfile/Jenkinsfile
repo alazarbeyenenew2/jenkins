@@ -45,7 +45,7 @@ pipeline {
                 expression {return params.RELEASE}
             }
             steps{
-                echo "releasing to production"
+                archiveArtifacts("**/test/*.txt")
             }
         }
 
