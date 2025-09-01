@@ -1,26 +1,26 @@
-pipline {
-   agent any 
-  
-  environment {
-    TEST_ENV = "test env"
-   }
+pipeline {
+    agent any 
 
-   
-  stages {
-        stage('clone'){
-           steps{
-           sh ''' 
-                echo "clon repo" 
-             '''
-          }
-         }
-     stage('build'){
-      steps{
-          sh '''
-    	   echo "building "
- 	'''
-       }
-      }
-   }
+    environment {
+        TEST_ENV = "test env"
+    }
 
+    stages {
+        stage('Clone') {
+            steps {
+                sh '''
+                    echo "cloning repo"
+                '''
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh '''
+                    echo "building"
+                '''
+            }
+        }
+    }
 }
+
