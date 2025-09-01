@@ -38,7 +38,7 @@ pipeline {
              }
 
              steps{
-                 sh ''' echo "deploying  to ${TARGET_ENV} release version ${RELEASE}  '''
+                 sh ''' echo "deploying  to ${TARGET_ENV} release version ${RELEASE}"  '''
              }
         }
     }
